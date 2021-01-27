@@ -5,19 +5,24 @@ import {
   Text,
   ImageBackground,
   Dimensions,
+  TouchableHighlight,
   StyleSheet,
   TouchableOpacity,
+  Modal,
+  Image,
 } from 'react-native';
 // Libraries import
 import Svg, {Path} from 'react-native-svg';
 // Components import
 import WavyHeader from '../components/WavyHeader';
-import {PlantContext} from './context'
+import {Divider, Rating, AirbnbRating} from 'react-native-elements';
+import {PlantContext} from './context';
 // constants
 const {height, width} = Dimensions.get('window');
 
 export function HomeScreen(props) {
   const {navigation} = props;
+  const [modalVisible, setModalVisible] = React.useState(false);
   /**
    * Title Component
    */
@@ -53,16 +58,18 @@ export function HomeScreen(props) {
   );
 
   const OptionComponent = ({name}) => (
-    <TouchableOpacity activeOpacity={0.5}  onPress={() => {
-        switch(name){
-            case 'Add Details':
-                navigation.navigate('PlantCategories')
-                break;
-            case 'View Details':
-                navigation.navigate('PlantViewAllDetails')
-                break;
+    <TouchableOpacity
+      activeOpacity={0.5}
+      onPress={() => {
+        switch (name) {
+          case 'Add Details':
+            navigation.navigate('PlantCategories');
+            break;
+          case 'View Details':
+            navigation.navigate('PlantViewAllDetails');
+            break;
         }
-    }}>
+      }}>
       <View
         style={{
           borderColor: '#fff',
@@ -96,7 +103,8 @@ export function HomeScreen(props) {
               navigation.navigate('AboutUs');
               break;
             case 'Rate App':
-              navigation.navigate('RateApp');
+              setModalVisible(true);
+              // navigation.navigate('RateApp');
               break;
           }
         }}>
@@ -156,6 +164,62 @@ export function HomeScreen(props) {
         <Title />
         <Options />
       </View>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Image
+              style={{
+                width: width * 0.2,
+                height: width * 0.2,
+                margin: height * 0.01,
+              }}
+              resizeMode="stretch"
+              source={require('../assets/images/plant2.jpg')}
+            />
+            <Text
+              style={[{...styles.modalText, fontSize: 20, fontWeight: 'bold'}]}>
+              Enjoying Plant Care?
+            </Text>
+            <Text style={{fontSize: 15}}>Tap a star to rate it on the</Text>
+            <Text style={{fontSize: 15}}>App Store.</Text>
+            <Divider
+              style={{backgroundColor: 'black', height: 1, width: width * 0.8}}
+            />
+
+            <View style={{paddingVertical: 10}}>
+              <AirbnbRating showRating={false} />
+            </View>
+            <Divider
+              style={{backgroundColor: 'black', height: 1, width: width * 0.8}}
+            />
+
+            {/* <View style={{borderWidth:1,width: width * 0.9, borderColor:'gray'}}></View> */}
+            <TouchableOpacity
+              // style={{...styles.openButton, backgroundColor: '#2196F3'}}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Text
+                style={[
+                  {
+                    ...styles.textStyle,
+                    color: '#000',
+                    fontSize: height * 0.024,
+                    paddingTop: height * 0.012,
+                  },
+                ]}>
+                Not Now
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </ImageBackground>
   );
 }
@@ -172,5 +236,42 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     marginTop: 35,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    width: width * 0.9,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  openButton: {
+    backgroundColor: '#F194FF',
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
   },
 });

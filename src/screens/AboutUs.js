@@ -72,7 +72,7 @@ const AboutUsNote = () => (
       to take care of their Fishes .
     </Text>
     <Text style={{fontSize: 23, fontWeight: 'bold', color: 'green'}}>
-      Features of the app -
+      Features of the app
     </Text>
     <Text style={{fontSize: 18, color: 'gray'}}>
       <Text style={{fontSize: 20, color: 'black', fontWeight: 'bold'}}></Text>

@@ -23,7 +23,7 @@ const Header = () => (
   />
 );
 
-const HeaderContent = () => (
+const HeaderContent = ({navigation}) => (
   <View
     style={{
       justifyContent: 'space-between',
@@ -64,10 +64,10 @@ const AboutUsNote = () => (
       alignItems: 'center',
       height: height * 0.7,
       padding: height * 0.02,
-      backgroundColor:'#fcf5ed',
-      justifyContent:'center'
+      backgroundColor: '#fcf5ed',
+      justifyContent: 'center',
     }}>
-    <Text style={{fontSize: 18}}>
+    <Text style={{fontSize: 18, marginBottom: 10}}>
       An easy to use, amazing and ads free app for the plant lovers to help them
       to take care of their Fishes .
     </Text>
@@ -75,16 +75,26 @@ const AboutUsNote = () => (
       Features of the app -
     </Text>
     <Text style={{fontSize: 18, color: 'gray'}}>
-        <Text style={{fontSize:20,color:'black', fontWeight:'bold'}}></Text>
-        <Text style={{fontSize:20,color:'black', fontWeight:'bold'}}>Choose Category</Text>  - User can choose the category of care plant they have to
-      take care. {"\n"}
-      
-      <Text style={{fontSize:20,color:'black', fontWeight:'bold'}}>Add details</Text>  - User can add the details of plant, they have to
-      care. {"\n"}
-      <Text style={{fontSize:20,color:'black', fontWeight:'bold'}}>View Details</Text> - User can view the list of plant to take care in the
-      choose category. {"\n"}
-      <Text style={{fontSize:20,color:'black', fontWeight:'bold'}}>Delete Details </Text> - User can delete the details of plant
-      that they find not necessary anytime.{"\n"}
+      <Text style={{fontSize: 20, color: 'black', fontWeight: 'bold'}}></Text>
+      <Text style={{fontSize: 20, color: 'black',paddingBottom: height * 0.05, fontWeight: 'bold'}}>
+        Choose Category
+      </Text>{' '}
+      - User can choose the category of care plant they have to take care.{' '}
+      {'\n'}
+      <Text style={{fontSize: 20, color: 'black',marginBottom: 10, fontWeight: 'bold'}}>
+        Add details
+      </Text>{' '}
+      - User can add the details of plant, they have to care. {'\n'}
+      <Text style={{fontSize: 20, color: 'black', marginBottom: 10, fontWeight: 'bold'}}>
+        View Details
+      </Text>{' '}
+      - User can view the list of plant to take care in the choose category.{' '}
+      {'\n'}
+      <Text style={{fontSize: 20, color: 'black',marginBottom: 10,  fontWeight: 'bold'}}>
+        Delete Details{' '}
+      </Text>{' '}
+      - User can delete the details of plant that they find not necessary
+      anytime.{'\n'}
     </Text>
     <Text style={{color: '#56f', fontWeight: 'bold', fontSize: 20}}>
       Download the app and manage your plant more.
@@ -92,11 +102,12 @@ const AboutUsNote = () => (
   </View>
 );
 
-export const AboutUs = () => {
+export const AboutUs = (props) => {
+    const {navigation} = props
   return (
     <View>
       <Header />
-      <HeaderContent />
+      <HeaderContent navigation={navigation} />
       <AboutUsNote />
     </View>
   );

@@ -30,13 +30,16 @@ export function PlantDetails(props) {
   const Header = () => (
     <WavyHeader
       customStyles={styles.svgCurve}
-      customHeight={height * 0.14}
+      customHeight={height * 0.15}
       customTop={height * 0.13}
       viewBox="0 80 1400 210"
       customBgColor="#3b9c52"
-      customWavePattern="M0,288L60,266.7C120,245,240,203,360,176C480,149,600,139,720,160C840,181,960,235,1080,261.3C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-    />
-  );
+      />
+      );
+      /**
+       customWavePattern="M0,288L60,266.7C120,245,240,203,360,176C480,149,600,139,720,160C840,181,960,235,1080,261.3C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+   * 
+   */
   const HeaderContent = () => (
     <View
       style={{

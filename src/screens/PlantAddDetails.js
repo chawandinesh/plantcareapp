@@ -48,14 +48,20 @@ export function PlantAddDetails(props) {
   const Header = () => (
     <WavyHeader
       customStyles={styles.svgCurve}
-      customHeight={height * 0.095}
+      customHeight={height * 0.15}
       customTop={height * 0.089}
       viewBox="10 70 1400 60"
       customBgColor="#3b9c52"
       // customWavePattern="M0,192L0,160L1440,160L1440,0L0,0L0,0Z"
-      customWavePattern="M0,288L48,261.3C96,235,192,181,288,165.3C384,149,480,171,576,192C672,213,768,235,864,224C960,213,1056,171,1152,176C1248,181,1344,235,1392,261.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-    />
-  );
+      />
+      );
+      
+      /**
+       customWavePattern="M0,288L48,261.3C96,235,192,181,288,165.3C384,149,480,171,576,192C672,213,768,235,864,224C960,213,1056,171,1152,176C1248,181,1344,235,1392,261.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+   * 
+   * @param {*} text 
+   * @param {*} name 
+   */
   const handleChageText = (text, name) => {
     setFormState({...formState, [name]: text});
   };
@@ -63,7 +69,7 @@ export function PlantAddDetails(props) {
     <View>
       <KeyboardAwareScrollView
         // style={{marginTop: height * 0.095 - HEIGHT}}
-        style={{paddingTop: height * 0.095 - HEIGHT}}
+        style={{paddingTop: height * 0.12 - HEIGHT}}
         contentContainerStyle={{alignItems: 'center'}}>
         {[
           {label: 'Plant Name', name: 'plantName'},
@@ -113,6 +119,7 @@ export function PlantAddDetails(props) {
                   textAlignVertical: 'top',
                   backgroundColor: '#fff',
                   borderBottomWidth: 5,
+                  height: height * 0.1,
                   borderRightWidth: 2,
                   borderLeftWidth: 2,
                   width: width * 0.8,
@@ -127,6 +134,7 @@ export function PlantAddDetails(props) {
               <TextInput
                 style={{
                   backgroundColor: '#fff',
+                  height: height * 0.05,
                   borderBottomWidth: 4,
                   borderRightWidth: 2,
                   borderLeftWidth: 2,

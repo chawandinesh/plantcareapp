@@ -87,7 +87,7 @@ export function PlantCategories(props) {
       showsVerticalScrollIndicator={false}>
       {data.sort().map((e, idx) => {
         return (
-          <View>
+          <View key={idx}>
           <View
             style={{
               marginTop: height * 0.02,

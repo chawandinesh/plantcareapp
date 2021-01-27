@@ -60,7 +60,7 @@ const AboutUsNote = () => (
   <View
     style={{
       width: width,
-      marginTop: HEIGHT,
+      marginTop: height * 0.12,
       alignItems: 'center',
       height: height * 0.7,
       padding: height * 0.02,

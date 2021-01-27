@@ -149,8 +149,8 @@ export function PlantDetails(props) {
             height: height * 0.5,
             alignItems: 'center',
           }}>
-          <View style={{backgroundColor: '#c0ebae', padding: 20, justifyContent:'center',height: height * 0.1,width: width * 0.9, borderBottomWidth: 5,borderRightWidth:3}}>
-            <Text style={{fontSize: 20, textAlign:'center',fontWeight: 'bold'}}>
+          <View style={{backgroundColor: '#c0ebae', padding: height * 0.01, justifyContent:'center',height: height * 0.2,width: width * 0.9, borderBottomWidth: 5,borderRightWidth:3}}>
+            <Text style={{fontSize: height * 0.04, textAlign:'center',fontWeight: 'bold'}}>
               No data found, Click on "+" to add Data
             </Text>
           </View>

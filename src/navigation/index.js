@@ -12,12 +12,13 @@ import {
   PlantShowDetails,
   HomeScreen,
 } from '../screens';
-import {View, Text} from 'react-native';
+import {View, Text,StatusBar} from 'react-native';
 
 const Stack = createStackNavigator();
 export default function Navigation() {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="light-content"/>
       <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName="HomeScreen">
         <Stack.Screen component={HomeScreen} name="HomeScreen" />
         <Stack.Screen component={RateApp} name="RateApp" />

@@ -113,29 +113,12 @@ export function PlantAddDetails(props) {
                 {e.label}
               </Text>
             </View>
-            {e.label === 'Task Requirements' ? (
+         
               <TextInput
                 style={{
-                  textAlignVertical: 'top',
                   backgroundColor: '#fff',
                   borderBottomWidth: 5,
-                  height: height * 0.1,
-                  borderRightWidth: 2,
-                  borderLeftWidth: 2,
-                  width: width * 0.8,
-                  borderRadius: 10,
-                }}
-                multiline={true}
-                value={formState[e.name]}
-                onChangeText={(text, label) => handleChageText(text, e.name)}
-                numberOfLines={4}
-              />
-            ) : (
-              <TextInput
-                style={{
-                  backgroundColor: '#fff',
                   height: height * 0.05,
-                  borderBottomWidth: 4,
                   borderRightWidth: 2,
                   borderLeftWidth: 2,
                   width: width * 0.8,
@@ -144,7 +127,8 @@ export function PlantAddDetails(props) {
                 value={formState[e.name]}
                 onChangeText={(text, label) => handleChageText(text, e.name)}
               />
-            )}
+           
+            
           </View>
         ))}
         <ImageButton />
@@ -192,7 +176,7 @@ export function PlantAddDetails(props) {
   const ImageButton = () => (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-between',
         width: width * 0.95,
@@ -203,6 +187,7 @@ export function PlantAddDetails(props) {
         activeOpacity={0.5}
         style={{
           height: height * 0.13,
+          marginBottom: height * 0.05,
           width: height * 0.13,
           borderRadius: 10,
           borderWidth: 2,

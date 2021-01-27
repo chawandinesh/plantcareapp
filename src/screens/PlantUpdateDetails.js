@@ -116,24 +116,7 @@ export function PlantUpdateDetails(props) {
                 {e.label}
               </Text>
             </View>
-            {e.label === 'Task Requirements' ? (
-              <TextInput
-                style={{
-                  textAlignVertical: 'top',
-                  height: height * 0.1,
-                  backgroundColor: '#fff',
-                  borderBottomWidth: 5,
-                  borderRightWidth: 2,
-                  borderLeftWidth: 2,
-                  width: width * 0.8,
-                  borderRadius: 10,
-                }}
-                multiline={true}
-                value={formState[e.name]}
-                onChangeText={(text, label) => handleChageText(text, e.name)}
-                numberOfLines={4}
-              />
-            ) : (
+            
               <TextInput
                 style={{
                   backgroundColor: '#fff',
@@ -147,7 +130,7 @@ export function PlantUpdateDetails(props) {
                 value={formState[e.name]}
                 onChangeText={(text, label) => handleChageText(text, e.name)}
               />
-            )}
+          
           </View>
         ))}
         <ImageButton />
@@ -197,7 +180,7 @@ export function PlantUpdateDetails(props) {
   const ImageButton = () => (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-between',
         width: width * 0.95,
@@ -209,6 +192,7 @@ export function PlantUpdateDetails(props) {
         style={{
           height: height * 0.13,
           width: height * 0.13,
+          marginBottom: height * 0.05,
           borderRadius: 10,
           borderWidth: 2,
           justifyContent: 'center',

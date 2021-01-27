@@ -87,10 +87,11 @@ export function PlantCategories(props) {
       showsVerticalScrollIndicator={false}>
       {data.sort().map((e, idx) => {
         return (
+          <View>
           <View
             style={{
-              marginTop: height * 0.05,
-              marginBottom: height * 0.02,
+              marginTop: height * 0.02,
+              marginBottom: height * 0.01,
               borderLeftWidth: 6,
               borderLeftColor: 'green',
             }}
@@ -134,6 +135,9 @@ export function PlantCategories(props) {
                 </Text>
               </TouchableOpacity>
             </View>
+             
+          </View>
+          <View style={{borderWidth: 3, borderColor:'#b87537' , width: width * 0.8, marginTop: height * 0.02, alignSelf:'center'}}></View>
           </View>
         );
       })}

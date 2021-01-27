@@ -80,7 +80,7 @@ export function PlantShowDetails(props) {
         {data.image ? (
           <Image
             source={{uri: data.image}}
-            style={{height: height * 0.2, width: width * 0.5}}
+            style={{height: height * 0.2, width: height * 0.2   }}
             resizeMode="stretch"
           />
         ) : (

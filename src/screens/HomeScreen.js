@@ -151,7 +151,7 @@ export function HomeScreen(props) {
     <ImageBackground
       style={{flex: 1}}
       blurRadius={0.1}
-      source={require('../assets/images/plant6.jpg')}>
+      source={require('../assets/images/plant2.jpg')}>
       <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.2)'}}>
         <Title />
         <Options />

@@ -157,7 +157,7 @@ export function PlantViewAllDetails(props) {
             }}>
             <Text
               style={{fontSize: 20, textAlign: 'center', fontWeight: 'bold'}}>
-              No data found, Click on "+" to add Data
+              No data found, Add details to view data
             </Text>
           </View>
         </View>
